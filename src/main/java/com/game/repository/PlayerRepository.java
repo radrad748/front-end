@@ -77,6 +77,12 @@ public class PlayerRepository {
     }
 
     public Player update(Player player) {
+        for (int i = 0; i < storage.size(); i++) {
+            if (storage.get(i).getId().equals(player.getId())) {
+                storage.set(i, player);
+                return storage.get(i);
+            }
+        }
         return player;
     }
 

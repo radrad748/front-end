@@ -2,10 +2,111 @@
 <head>
     <title>RPG</title>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
+    <script src="/js/first.js"></script>
+    <script src="/js/createPlayer.js"></script>
     <link href="/css/my.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/resources/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/resources/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/resources/icon/favicon-16x16.png">
+    <link rel="manifest" href="/resources/icon/site.webmanifest">
 </head>
 <body>
-<h1>RPG admin panel</h1>
+<h1 style="color: #2a4772">RPG admin panel</h1>
+<h2 style="color: #2a4772">Accaunts List</h2>
+<label for="pageSizeSelect">Count per page:</label>
+<select id="pageSizeSelect" size="1">
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+</select>
+<table id="table">
+    <tr> <th>#</th> <th>Name</th> <th>Title</th> <th>Race</th> <th>Profession</th> <th>Level</th> <th>Birthday</th> <th>Banned</th> <th>Edit</th> <th>Delete</th> </tr>
+</table>
+<div id="pagination">Pages:
 
+</div>
+<script>
+    changeList()
+</script>
+<hr>
+<h3 style="color: #2a4772">Create new account:</h3>
+<div class="form-create-account">
+<form id="createPlayer">
+    <div>
+        <input type="text" id="Name" required minlength="" maxlength="12" class="size-input" placeholder="Name">
+    </div>
+
+    <div>
+        <input type="text" id="Title" required minlength="1" maxlength="30" class="size-input" placeholder="Title">
+    </div>
+
+    <label for="Race">Race:</label>
+    <div>
+        <select id="Race" size="1" class="size-input">
+            <option value="HUMAN">HUMAN</option>
+            <option value="DWARF">DWARF</option>
+            <option value="ELF">ELF</option>
+            <option value="GIANT">GIANT</option>
+            <option value="ORC">ORC</option>
+            <option value="TROLL">TROLL</option>
+            <option value="HOBBIT">HOBBIT</option>
+        </select>
+    </div>
+
+    <label for="Profession">Profession:</label>
+    <div>
+        <select id="Profession" size="1" class="size-input">
+            <option value="WARRIOR">WARRIOR</option>
+            <option value="ROGUE">ROGUE</option>
+            <option value="SORCERER">SORCERER</option>
+            <option value="CLERIC">CLERIC</option>
+            <option value="PALADIN">PALADIN</option>
+            <option value="NAZGUL">NAZGUL</option>
+            <option value="WARLOCK">WARLOCK</option>
+            <option value="DRUID">DRUID</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="number" id="Level" required min="0" max="100" class="size-input" placeholder="Level">
+    </div>
+
+    <label for="Birthday">Birthday:</label>
+    <div>
+        <input type="date" id="Birthday" required class="size-input">
+    </div>
+
+    <label for="Banned">Banned:</label>
+    <div>
+        <select id="Banned" size="1" class="size-input">
+            <option value="false">false</option>
+            <option value="true">true</option>
+        </select>
+    </div>
+
+    <div class="block-right">
+        <input type="image" src="/img/save.png" alt="">
+    </div>
+</form>
+</div>
+<script>
+    create()
+</script>
 </body>
 </html>
